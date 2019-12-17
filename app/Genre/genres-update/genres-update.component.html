@@ -1,0 +1,8 @@
+<h1>Update genre:</h1>
+<form [formGroup]="genreForm" (ngSubmit)="updateGenreButton()">
+  <label>
+    Name:
+    <input type="text" formControlName="name">
+  </label>
+  <button type="submit">Update</button>
+</form>

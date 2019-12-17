@@ -1,0 +1,60 @@
+<h1>List of books:</h1>
+<table class="table table-hover table-striped" border="1">
+  <thead>
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Name</th>
+    <th class="text-center" scope="col" colspan="3">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let book of books">
+    <td scope="row">{{book.id}}</td>
+    <td>{{book.name}}</td>
+    <td><a routerLink="/booksupdate/{{book.id}}"> Update </a></td>
+    <td><a routerLink="/books" (click)="showmodal=true"> Delete </a></td>
+    <td><a routerLink="/books/{{book.id}}"> Details </a></td>
+    <div class="modal" [ngClass]="{'show': showmodal}">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" (click)="showmodal=false">&times;</span>
+        <p>This book will be deleted</p>
+      </div>
+      <button (click)="delete(book.id)">Ok</button>
+    </div>
+  </tr>
+  </tbody>
+</table>
+<button class="buttont" routerLink="/booksadd">Add Book</button>
+
+
+<!--<button class="buttont" (click)="showmodal=true">Open Modal</button>-->
+
+<!-- The Modal -->
+
+
+
+<!--&lt;!&ndash; Button trigger modal &ndash;&gt;-->
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#dosmth">-->
+<!--  Launch demo modal-->
+<!--</button>-->
+
+<!--&lt;!&ndash; Modal &ndash;&gt;-->
+<!--<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">-->
+<!--  <div class="modal-dialog" role="document">-->
+<!--    <div class="modal-content">-->
+<!--      <div class="modal-header">-->
+<!--        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+<!--        <h4 class="modal-title" id="myModalLabel">Modal title</h4>-->
+<!--      </div>-->
+<!--      <div class="modal-body">-->
+<!--        ...-->
+<!--      </div>-->
+<!--      <div class="modal-footer">-->
+<!--        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+<!--        <button type="button" class="btn btn-primary">Save changes</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

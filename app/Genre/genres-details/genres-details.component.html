@@ -1,0 +1,13 @@
+<h1>Genre details:</h1>
+<div *ngIf="genre">
+  <ul>
+    <li> {{genre.id}} - {{genre.name}}
+      <ul>
+        <li *ngFor="let book of genre.book"> {{book.book.name}} </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<div *ngIf="!genre">
+  <H2>Genre not found</H2>
+</div>

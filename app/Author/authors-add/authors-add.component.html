@@ -1,0 +1,13 @@
+<h1>Add author:</h1>
+<form [formGroup]="authorForm" (ngSubmit)="addAuthorButton()">
+  <label>
+    Name:
+    <input type="text" formControlName="name">
+  </label>
+  <label>
+    Surname:
+    <input type="text" formControlName="surname">
+  </label>
+  <button type="submit">Add</button>
+</form>
+<!--<li *ngFor="let book of books">{{book.Id}} {{book.Name}}  <a routerLink="/books/{{book.Id}}"> Details </a> </li>-->

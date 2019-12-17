@@ -1,0 +1,9 @@
+<h1>Add genre:</h1>
+<form [formGroup]="genreForm" (ngSubmit)="addGenreButton()">
+  <label>
+    Name:
+    <input type="text" formControlName="name">
+  </label>
+  <button type="submit">Add</button>
+</form>
+<!--<li *ngFor="let book of books">{{book.Id}} {{book.Name}}  <a routerLink="/books/{{book.Id}}"> Details </a> </li>-->

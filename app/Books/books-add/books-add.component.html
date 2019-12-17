@@ -1,0 +1,21 @@
+<h1>Add book:</h1>
+<form [formGroup]="bookForm" (ngSubmit)="addBookButton()">
+  <label>
+    Name:
+    <input type="text" formControlName="name">
+  </label>
+  <label>Author: </label>
+  <select formControlName="authorId">
+    <option *ngFor="let author of authors; let i = index" [value]="authors[i].id">
+      {{authors[i].name}} - {{authors[i].surname}}
+    </option>
+  </select>
+  <label>Genre: </label>
+  <select formControlName="genreId">
+    <option *ngFor="let genre of genres; let i = index" [value]="genres[i].id">
+      {{genres[i].name}}
+    </option>
+  </select>
+  <button type="submit">Add</button>
+</form>
+<!--<li *ngFor="let book of books">{{book.Id}} {{book.Name}}  <a routerLink="/books/{{book.Id}}"> Details </a> </li>-->

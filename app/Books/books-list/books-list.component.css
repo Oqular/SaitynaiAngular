@@ -1,0 +1,33 @@
+.modal.show {
+  display: block;
+  margin: auto;
+  width: 50%;
+  height: 20%;
+}
+
+@media only screen and (max-width: 768px) {
+  table {background: yellowgreen;}
+}
+
+table {
+  font-family: 'Gaegu';
+  font-size: 18px;
+}
+
+p {
+  margin-left: 35%;
+}
+
+button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+}
+.buttont {
+  transition: width 3s;
+}
+
+.buttont:hover {
+  width: 100%;
+}

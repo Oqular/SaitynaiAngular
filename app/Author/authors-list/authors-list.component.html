@@ -1,0 +1,31 @@
+<h1>List of authors:</h1>
+<table class="table table-hover table-striped" border="1">
+  <thead>
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Name</th>
+    <th scope="col">Surname</th>
+    <th class="text-center" scope="col" colspan="3">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let author of authors">
+    <td scope="row">{{author.id}}</td>
+    <td>{{author.name}}</td>
+    <td>{{author.surname}}</td>
+    <td><a routerLink="/authorsupdate/{{author.id}}"> Update </a></td>
+    <td><a routerLink="/authors" (click)="showmodal=true"> Delete </a></td>
+    <td><a routerLink="/authors/{{author.id}}"> Details </a></td>
+    <div class="modal" [ngClass]="{'show': showmodal}">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" (click)="showmodal=false">&times;</span>
+        <p>This author will be deleted</p>
+      </div>
+      <button (click)="delete(author.id)">Ok</button>
+    </div>
+  </tr>
+  </tbody>
+</table>
+<button class="buttont" routerLink="/authorsadd">Add Author</button>

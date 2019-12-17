@@ -1,0 +1,20 @@
+<h1>Update book:</h1>
+<form [formGroup]="bookForm" (ngSubmit)="updateBookButton()">
+  <label>
+    Name:
+    <input type="text" formControlName="name">
+  </label>
+  <label>Author: </label>
+  <select formControlName="authorId">
+    <option *ngFor="let author of authors; let i = index" [value]="authors[i].id">
+      {{authors[i].name}} - {{authors[i].surname}}
+    </option>
+  </select>
+  <label>Genre: </label>
+  <select formControlName="genreId">
+    <option *ngFor="let genre of genres; let i = index" [value]="genres[i].id">
+      {{genres[i].name}}
+    </option>
+  </select>
+  <button type="submit">Update</button>
+</form>

@@ -1,0 +1,12 @@
+<h1>Update author:</h1>
+<form [formGroup]="authorForm" (ngSubmit)="updateAuthorButton()">
+  <label>
+    Name:
+    <input type="text" formControlName="name">
+  </label>
+  <label>
+    Surname:
+    <input type="text" formControlName="surname">
+  </label>
+  <button type="submit">Update</button>
+</form>

@@ -1,0 +1,13 @@
+<h1>Book details:</h1>
+<div *ngIf="book">
+<ul>
+  <li> {{book.id}} - {{book.name}} - {{book.author.name}} - {{book.author.surname}}
+    <ul>
+      <li *ngFor="let genre of book.genre"> {{genre.genre.name}} </li>
+    </ul>
+  </li>
+</ul>
+</div>
+<div *ngIf="!book">
+  <H2>Book not found</H2>
+</div>

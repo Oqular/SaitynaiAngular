@@ -1,0 +1,29 @@
+<h1>List of Genres:</h1>
+<table class="table table-hover table-striped" border="1">
+  <thead>
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Name</th>
+    <th class="text-center" scope="col" colspan="3">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let genre of genres">
+    <td scope="row">{{genre.id}}</td>
+    <td>{{genre.name}}</td>
+    <td><a routerLink="/genresupdate/{{genre.id}}"> Update </a></td>
+    <td><a routerLink="/genres" (click)="showmodal=true"> Delete </a></td>
+    <td><a routerLink="/genres/{{genre.id}}"> Details </a></td>
+    <div class="modal" [ngClass]="{'show': showmodal}">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" (click)="showmodal=false">&times;</span>
+        <p>This genre will be deleted</p>
+      </div>
+      <button (click)="delete(genre.id)">Ok</button>
+    </div>
+  </tr>
+  </tbody>
+</table>
+<button routerLink="/genresadd">Add Genre</button>
